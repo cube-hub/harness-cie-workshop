@@ -8,13 +8,12 @@ metadata:
  {{- end }}
  annotations:
    kubernetes.io/ingress.class: nginx
-   kubernetes.io/ingress.global-static-ip-name: "bootcamp-static-ip"
 spec:
   rules:
   {{- if lower .Values.sename}}
-  - host: {{ lower .Values.sename }}.cie-bootcamp.co.uk
+  - host: {{ lower .Values.sename }}.frontend.devx.harness-demo.site
   {{- else }}
-  - host: cie-bootcamp.co.uk
+  - host: frontend.devx.harness-demo.site
   {{- end }}
     http:
      paths:
@@ -22,12 +21,12 @@ spec:
        backend:
        {{- if lower .Values.sename}}
           service:
-             name: web-frontend-{{lower .Values.sename }}-svc
+             name: web-devxfrontend-{{lower .Values.sename }}-svc
              port:
                number: 8080
        {{- else }}
           service:
-             name: web-frontend-svc
+             name: web-devxfrontend-svc
              port:
                number: 8080
        {{- end }}
