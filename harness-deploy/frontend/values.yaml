@@ -13,7 +13,7 @@ namespace: <+infra.namespace>
 # ClusterIP | NodePort | LoadBalancer | ExternalName
 serviceType: ClusterIP
 
-sename: <+variable.username>
+sename: <+variable.devx_username>
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
 servicePort: 8080
