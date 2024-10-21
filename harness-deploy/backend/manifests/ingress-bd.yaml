@@ -21,7 +21,7 @@ spec:
        backend:
        {{- if lower .Values.sename}}
           service:
-             name: web-backend-{{lower .Values.sename }}-svc
+             name: web-devxbackend-{{lower .Values.sename }}-svc
              port:
                number: 80
        {{- else }}
