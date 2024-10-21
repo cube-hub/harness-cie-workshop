@@ -92,6 +92,7 @@ class ViewBarDiagram(generics.ListAPIView):
         start_datetime = timezone.make_aware(start_datetime)
         end_datetime =timezone.make_aware(end_datetime)
 
+
         data = list(RequestEntry.objects.filter(created_at__range=(str(start_datetime), str(end_datetime))).values('name','created_at'))
 
 
@@ -116,4 +117,5 @@ class checkRelease(APIView):
         payload={
            "deployment_type": deployment_type
         }
+        print(payload)
         return JsonResponse(payload,safe=False)
